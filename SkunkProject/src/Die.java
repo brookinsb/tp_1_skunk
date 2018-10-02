@@ -2,12 +2,24 @@
 public class Die
 {
 	private int lastRoll;
+	private int[] dieValues;
+	private int testDieIndex;
+	private boolean testDie = false;
 
 	public Die()
 	{
+		testDie = false;
 		this.roll();
 	}
 
+	public Die(int[] initValues) {
+		testDie = true;
+		testDieIndex = 0;
+		dieValues = initValues;
+		this.roll();
+		
+	}
+	
 	public int getLastRoll() // getter or accessor method
 	{
 
@@ -16,7 +28,11 @@ public class Die
 
 	public void roll() // note how this changes Die's state, but doesn't return anything
 	{
-		this.lastRoll = (int) (Math.random() * 6 + 1);
+		if(!testDie) {
+			this.lastRoll = (int) (Math.random() * 6 + 1);
+		} else {
+			this.lastRoll = dieValues[testDieIndex++];
+		}
 	}
 	
 	@Override
