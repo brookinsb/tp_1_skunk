@@ -32,6 +32,9 @@ public class Die
 			this.lastRoll = (int) (Math.random() * 6 + 1);
 		} else {
 			this.lastRoll = dieValues[testDieIndex++];
+			if (testDieIndex >= dieValues.length){
+				testDieIndex = 0;
+			}
 		}
 	}
 	
