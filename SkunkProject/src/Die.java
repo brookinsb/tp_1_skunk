@@ -13,6 +13,11 @@ public class Die
 	}
 
 	public Die(int[] initValues) {
+		if (initValues == null)
+		{
+			throw new RuntimeException("null initializing int[] array");
+		}
+
 		testDie = true;
 		testDieIndex = 0;
 		dieValues = initValues;
