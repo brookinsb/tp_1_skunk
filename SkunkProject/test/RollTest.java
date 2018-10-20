@@ -22,7 +22,7 @@ public class RollTest {
 	public void test_roll_dice() {
 		Roll roll = new Roll();
 		
-		roll.takeRoll();
+		roll.shakeDie();
 //		assertEquals("")
 		
 	}

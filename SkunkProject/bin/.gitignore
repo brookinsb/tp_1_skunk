@@ -1,4 +1,13 @@
-/SkunkApp.class
 /.gitkey
+/Dice.class
+/Die.class
 /DieTest.class
-/*.class
+/Scratch.class
+/SkunkApp.class
+/Roll.class
+/RollTest.class
+/ISkunkUi.class
+/.DS_Store
+/bin/.DS_Store
+/RollResult.class
+/Roll$Skunk_Roll.class
