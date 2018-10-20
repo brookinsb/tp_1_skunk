@@ -1,7 +1,6 @@
 import edu.princeton.cs.introcs.StdOut;
 
 public class SkunkApp implements ISkunkUi
-
 {
 
 	
