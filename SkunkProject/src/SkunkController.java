@@ -12,4 +12,17 @@ public class SkunkController {
 	public void registerUi(ISkunkUi ui) {
 		this.skunkUi = ui;
 	}
+	
+	public void gameLoop() {
+		boolean keepLooping = true;
+		while(keepLooping) {
+			String response;
+			
+			response = skunkUi.displayPrompt("");
+			
+			if(response.equals("n")) {
+				keepLooping = false;
+			}
+		}
+	}
 }

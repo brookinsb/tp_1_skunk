@@ -12,6 +12,8 @@ public class SkunkApp
 		skunkController = new SkunkController();
 		
 		skunkController.registerUi(new SkunkUi());
+		
+		skunkController.gameLoop();
 
 	}
 
