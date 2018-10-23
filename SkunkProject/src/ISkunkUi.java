@@ -4,6 +4,6 @@ public interface ISkunkUi
 
 	void displayRoll();
 	
-	void displayPrompt(String prompt);
+	String displayPrompt(String prompt);
 	
 }
