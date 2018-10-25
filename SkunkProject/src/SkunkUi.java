@@ -24,4 +24,11 @@ public class SkunkUi implements ISkunkUi {
 		
 	}
 
+	@Override
+	public String getPlayerName() {
+		StdOut.print("Enter player name:");
+		String name = StdIn.readLine();
+		return name;
+	}
+
 }

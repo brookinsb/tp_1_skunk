@@ -15,6 +15,9 @@ public class SkunkController {
 	
 	public void gameLoop() {
 		boolean keepLooping = true;
+		
+		Round skunkRound = new Round(skunkUi);
+		
 		while(keepLooping) {
 			String response;
 			
