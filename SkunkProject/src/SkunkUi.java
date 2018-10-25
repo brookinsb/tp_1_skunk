@@ -20,7 +20,6 @@ public class SkunkUi implements ISkunkUi {
 		String response = StdIn.readLine();
 		
 		return response;
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -29,6 +28,15 @@ public class SkunkUi implements ISkunkUi {
 		StdOut.print("Enter player name:");
 		String name = StdIn.readLine();
 		return name;
+	}
+
+	@Override
+	public boolean rollPrompt() {
+		StdOut.print("Do you wnat to roll? (n or y)");
+		
+		String response = StdIn.readLine();
+		
+		return response.toLowerCase().equals("y");
 	}
 
 }

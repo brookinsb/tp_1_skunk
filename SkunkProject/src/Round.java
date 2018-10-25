@@ -16,12 +16,12 @@ public class Round {
 	
 	private void addPlayers() {
 		String name = skunkUi.getPlayerName();
-		players.add(new Player(name));
+		players.add(new Player(skunkUi, name));
 		
 	}
 	
 	public void start() {
-		Player activePlayer = players.get(1);
+		Player activePlayer = players.get(0);
 		activePlayer.takeTurn();
 	}
 	

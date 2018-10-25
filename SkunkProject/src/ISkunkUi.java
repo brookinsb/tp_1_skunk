@@ -7,5 +7,7 @@ public interface ISkunkUi
 	String displayPrompt(String prompt);
 
 	String getPlayerName();
+
+	boolean rollPrompt();
 	
 }
