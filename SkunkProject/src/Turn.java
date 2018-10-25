@@ -1,4 +1,5 @@
 
+
 public class Turn {
 	
 	private ISkunkUi Ui;
@@ -20,11 +21,33 @@ public class Turn {
 		while (rollAgain) {
 			roll.shakeDie();
 			
-			handleShake();
+			handleShake(roll);
 		}
 	}
 
-	private void handleShake() {
+	private boolean handleShake(Roll roll) {
+		boolean turnDone = false;
+		SkunkRoll rollResult = roll.getRoll();
+		
+		switch(rollResult) {
+			case SKUNK:
+				
+				turnDone = true;
+				break;
+			case DOUBLE_SKUNK:
+				
+				turnDone = true;
+				break;
+			case SKUNK_DEUCE:
+				
+				turnDone = true;
+				break;
+			default:
+				
+				int rollValue = roll.getRollValue();
+		}
+		
+		return turnDone;
 		
 	}
 }

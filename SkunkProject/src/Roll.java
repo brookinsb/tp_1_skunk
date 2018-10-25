@@ -6,35 +6,6 @@ public class Roll {
 	private int lastDie1Value;
 	private int lastDie2Value;
 
-	public enum Skunk_Roll {
-		NO_SKUNK(0),
-		SKUNK(0),
-		DOUBLE_SKUNK(0),
-		SKUNK_DEUCE(0),
-		FOUR(4),
-		FIVE(5),
-		SIX(6),
-		SEVEN(7),
-		EIGHT(8),
-		NINE(9),
-		TEN(10),
-		ELEVEN(11),
-		TWELVE(12);
-		
-		private int value;
-		
-		private Skunk_Roll(int value) {
-			this.value = value;
-		}
-
-		public int getValue() {
-			return value;
-		}
-
-		public void setValue(int value) {
-			this.value = value;
-		}
-	}
 	
 	
 	public Roll() {
@@ -60,66 +31,66 @@ public class Roll {
 	}
 	
 	private boolean isRollASkunkRoll() {
-		Skunk_Roll roll = Skunk_Roll.NO_SKUNK;
+		SkunkRoll roll = SkunkRoll.NO_SKUNK;
 		
 		if(lastDie1Value == 1 && lastDie2Value == 1) {
-			roll = Skunk_Roll.DOUBLE_SKUNK;
+			roll = SkunkRoll.DOUBLE_SKUNK;
 		} 
 		else if(lastDie1Value + lastDie2Value == 3) {
-			roll = Skunk_Roll.SKUNK_DEUCE;
+			roll = SkunkRoll.SKUNK_DEUCE;
 		}
 		else if(lastDie1Value == 1 || lastDie2Value == 1 ) {
-				roll = Skunk_Roll.SKUNK;
+				roll = SkunkRoll.SKUNK;
 		}
 						
-		return roll == Skunk_Roll.SKUNK;
+		return roll == SkunkRoll.SKUNK;
 	}
 	
 	
-	public Skunk_Roll getRoll() {
-		Skunk_Roll roll = Skunk_Roll.NO_SKUNK;
+	public SkunkRoll getRoll() {
+		SkunkRoll roll = SkunkRoll.NO_SKUNK;
 		
 		if(isRollASkunkRoll() ) {
-			roll = Skunk_Roll.SKUNK;
+			roll = SkunkRoll.SKUNK;
 		} else {
 			
 			int rollValue = lastDie1Value + lastDie2Value;
 			switch(rollValue) {
 			case 2:
-				roll = Skunk_Roll.DOUBLE_SKUNK;
+				roll = SkunkRoll.DOUBLE_SKUNK;
 				break;
 			case 3:
-				roll = Skunk_Roll.SKUNK_DEUCE;
+				roll = SkunkRoll.SKUNK_DEUCE;
 				break;
 			case 4:
-				roll = Skunk_Roll.FOUR;
+				roll = SkunkRoll.FOUR;
 				break;
 			case 5:
-				roll = Skunk_Roll.FIVE;
+				roll = SkunkRoll.FIVE;
 				break;
 			case 6:
-				roll = Skunk_Roll.SIX;
+				roll = SkunkRoll.SIX;
 				break;
 			case 7:
-				roll = Skunk_Roll.SEVEN;
+				roll = SkunkRoll.SEVEN;
 				break;
 			case 8:
-				roll = Skunk_Roll.EIGHT;
+				roll = SkunkRoll.EIGHT;
 				break;
 			case 9:
-				roll = Skunk_Roll.NINE;
+				roll = SkunkRoll.NINE;
 				break;
 			case 10:
-				roll = Skunk_Roll.TEN;
+				roll = SkunkRoll.TEN;
 				break;
 			case 11:
-				roll = Skunk_Roll.ELEVEN;
+				roll = SkunkRoll.ELEVEN;
 				break;
 			case 12:
-				roll = Skunk_Roll.TWELVE;
+				roll = SkunkRoll.TWELVE;
 				break;
 			default:
-				roll = Skunk_Roll.NO_SKUNK;
+				roll = SkunkRoll.NO_SKUNK;
 				throw new IllegalArgumentException("Illegal roll value");
 			}
 			
