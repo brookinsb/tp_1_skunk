@@ -16,6 +16,21 @@ public class DieTest extends TestCase {
 		}
 	}
 
+	public void testRealDie() { 
+		Die die = new Die();
+		
+		for(int dieIndex = 0; dieIndex < 100020; dieIndex++ ){
+			
+			boolean testResults = die.getLastRoll() >= 1 && die.getLastRoll() <= 6; 
+			assertEquals("Die out of range.", testResults, true); 
+			
+		die.roll();
+			
+		
+		}
+	}
+
+
 //	public void testGetLastRoll() {
 //		fail("Not yet implemented");
 //	}
