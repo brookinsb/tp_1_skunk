@@ -2,9 +2,9 @@
 public interface ISkunkUi
 {
 
-	void displayRoll();
+	void displayRollInfo(SkunkRoll roll, int playerScore);
 	
-	String displayPrompt(String prompt);
+	void displayMessage(String prompt);
 
 	String getPlayerName();
 

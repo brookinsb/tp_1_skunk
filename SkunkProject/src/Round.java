@@ -23,6 +23,8 @@ public class Round {
 	public void start() {
 		Player activePlayer = players.get(0);
 		activePlayer.takeTurn();
+		
+		skunkUi.displayMessage("End of round");
 	}
 	
 	

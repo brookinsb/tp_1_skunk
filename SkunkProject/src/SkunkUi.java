@@ -7,32 +7,28 @@ public class SkunkUi implements ISkunkUi {
 	}
 
 	@Override
-	public void displayRoll() {
-		StdOut.print("displayRoll");
-		// TODO Auto-generated method stub
+	public void displayRollInfo(SkunkRoll roll, int playerScore) {
+		StdOut.println("Roll result: " + roll.toString());
+		StdOut.println("Cummulative turn score: " + playerScore);
 		
 	}
 
 	@Override
-	public String displayPrompt(String prompt) {
-		StdOut.print("Do you wnat to roll? (n or y)");
-		
-		String response = StdIn.readLine();
-		
-		return response;
-		
+	public void displayMessage(String prompt) {
+		StdOut.println(prompt);
+				
 	}
 
 	@Override
 	public String getPlayerName() {
-		StdOut.print("Enter player name:");
+		StdOut.print("Enter player name: ");
 		String name = StdIn.readLine();
 		return name;
 	}
 
 	@Override
 	public boolean rollPrompt() {
-		StdOut.print("Do you wnat to roll? (n or y)");
+		StdOut.print("Do you wnat to roll? (n or y): ");
 		
 		String response = StdIn.readLine();
 		
