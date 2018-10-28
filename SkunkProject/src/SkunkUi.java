@@ -14,6 +14,13 @@ public class SkunkUi implements ISkunkUi {
 	}
 
 	@Override
+	public void displayTurnInfo(String name, int chips, int score) {
+		StdOut.println(name + "\'s turn ended");
+		StdOut.println("Score: " + score + ".  Chips: " + chips);
+		
+	}
+
+	@Override
 	public void displayMessage(String prompt) {
 		StdOut.println(prompt);
 				

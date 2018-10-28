@@ -19,11 +19,13 @@ public class Player {
 
 		handleTurnScore(turn);
 		
+		ui.displayTurnInfo(name, chips, score);
+		
 	}
 
 	private void handleTurnScore(Turn turn) {
 		chipsToKitty = turn.getTotalChips();
-		chips =- chipsToKitty;
+		chips -= chipsToKitty;
 		if(chips < 0) {
 			chips = 0;
 		}

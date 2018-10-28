@@ -2,27 +2,32 @@
 
 public class Turn {
 	
+	private Roll mRoll;
 	private ISkunkUi Ui;
 	private int startingScore;
 	private int turnScore = 0;
 	private int chipNumber;
+	boolean turnDone = false;
 	
 	
 	public Turn(ISkunkUi Ui, int startingTurnScore) {
 		this.Ui = Ui;
 		this.startingScore = startingTurnScore;
+		mRoll = new Roll();
 	}
 	
 	public void go() {
-		Roll roll = new Roll();
 		boolean rollAgain;
 		
 		rollAgain = Ui.rollPrompt();
 		
 		while (rollAgain) {
-			roll.shakeDie();
+			mRoll.shakeDie();
 			
-			boolean skunkRolled = handleShake(roll);
+			boolean skunkRolled = handleShake(mRoll);
+			
+			int playerTurnScore = startingScore + turnScore;
+			Ui.displayRollInfo(mRoll.getRoll(), playerTurnScore);
 			
 			if(skunkRolled) {
 				rollAgain = false;
@@ -56,10 +61,8 @@ public class Turn {
 				
 				int rollValue = roll.getRollValue();
 				turnScore += rollValue;
+				chipNumber = 0;
 		}
-		
-		int playerTurnScore = startingScore + turnScore;
-		Ui.displayRollInfo(rollResult, playerTurnScore);
 		
 		return turnDone;
 		
@@ -74,4 +77,9 @@ public class Turn {
 
 		return turnScore;
 	}
+
+	public Roll getRoll() {
+		return mRoll;
+	}
+
 }
