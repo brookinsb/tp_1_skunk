@@ -74,7 +74,7 @@ public class TurnTest {
 					assertEquals("Chip value incorrect", turn.getScore(), 0);
 					break;
 				case DOUBLE_SKUNK:
-					assertEquals("Chip value incorrect", turn.getScore(), 0);
+					assertEquals("Chip value incorrect", turn.getScore(), -1);
 					break;
 				case SKUNK_DEUCE:
 					assertEquals("Chip value incorrect", turn.getScore(), 0);
