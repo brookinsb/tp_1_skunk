@@ -31,16 +31,10 @@ public class RollTest {
 	}
 	
 	@Test
-// I want to test the private method 'isRollASkunkROll'... may be more challenging and need to call the class itself. Will continue working. 
 	public void test_isRollASkunkRoll()
 	{
-		Roll roll = new Roll();
 		
 	}
-	
-	
-	//@Test
-	
 	
 	
 }
