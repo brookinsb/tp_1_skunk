@@ -63,6 +63,7 @@ public class Dice
 	// Roll of 7 => 4 + 3
 	//
 
+	@Override
 	public String toString()
 	{
 		return "Dice with last roll: " + getLastRoll() + " => " + die1.getLastRoll() + " + " + die2.getLastRoll();

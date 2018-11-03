@@ -2,6 +2,7 @@ import junit.framework.TestCase;
 
 public class DieTest extends TestCase {
 
+	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
 	}
