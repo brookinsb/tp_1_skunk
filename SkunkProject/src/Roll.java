@@ -22,14 +22,6 @@ public class Roll {
 		lastDie2Value = die2.getLastRoll();
 	}
 
-	public int getLastDie1Value() {
-		return lastDie1Value;
-	}
-
-	public int getLastDie2Value() {
-		return lastDie2Value;
-	}
-	
 	private boolean isRollASkunkRoll() {
 		SkunkRoll roll = SkunkRoll.NO_SKUNK;
 		
