@@ -20,7 +20,7 @@ public class TurnTest {
 		}
 
 		@Override
-		public void displayTurnInfo(String name, int chips, int score) {
+		public void displayEndTurnInfo(String name, int chips, int score) {
 			// TODO Auto-generated method stub
 			
 		}
@@ -56,6 +56,12 @@ public class TurnTest {
 		public int numberOfPlayersPrompt() {
 			// TODO Auto-generated method stub
 			return 0;
+		}
+
+		@Override
+		public void displayStartTurnInfo(String name, int chips, int score) {
+			// TODO Auto-generated method stub
+			
 		}
 		
 	}

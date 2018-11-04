@@ -15,11 +15,13 @@ public class Player {
 	public void takeTurn() {
 		Turn turn = new Turn(ui, score);
 		
+		ui.displayStartTurnInfo(name, chips, score);
+		
 		turn.go();
 
 		handleTurnScore(turn);
 		
-		ui.displayTurnInfo(name, chips, score);
+		ui.displayEndTurnInfo(name, chips, score);
 		
 	}
 

@@ -4,19 +4,22 @@ public class SkunkUi implements ISkunkUi {
 	
 	public SkunkUi() {
 		StdOut.print("SkunkUi init");
+		StdOut.println();
 	}
 
 	@Override
 	public void displayRollInfo(SkunkRoll roll, int playerScore) {
 		StdOut.println("Roll result: " + roll.toString());
 		StdOut.println("Cummulative turn score: " + playerScore);
+		StdOut.println();
 		
 	}
 
 	@Override
-	public void displayTurnInfo(String name, int chips, int score) {
+	public void displayEndTurnInfo(String name, int chips, int score) {
 		StdOut.println(name + "\'s turn ended");
 		StdOut.println("Score: " + score + ".  Chips: " + chips);
+		StdOut.println();
 		
 	}
 
@@ -29,6 +32,7 @@ public class SkunkUi implements ISkunkUi {
 	@Override
 	public String getPlayerName() {
 		StdOut.print("Enter player name: ");
+		StdOut.println();
 		String name = StdIn.readLine();
 		return name;
 	}
@@ -49,6 +53,14 @@ public class SkunkUi implements ISkunkUi {
 		int response = Integer.parseInt(StdIn.readLine());
 		
 		return response;
+	}
+
+	@Override
+	public void displayStartTurnInfo(String name, int chips, int score) {
+		StdOut.println("Starting " + name + "\'s turn");
+		StdOut.println("Score: " + score + ".  Chips: " + chips);
+		StdOut.println();
+		
 	}
 
 }

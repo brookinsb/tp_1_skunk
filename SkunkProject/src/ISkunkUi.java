@@ -4,7 +4,7 @@ public interface ISkunkUi
 
 	void displayRollInfo(SkunkRoll roll, int playerScore);
 	
-	void displayTurnInfo(String name, int chips, int score);
+	void displayEndTurnInfo(String name, int chips, int score);
 	
 	void displayMessage(String prompt);
 
@@ -13,5 +13,7 @@ public interface ISkunkUi
 	boolean rollPrompt();
 
 	int numberOfPlayersPrompt();
+
+	void displayStartTurnInfo(String name, int chips, int score);
 	
 }
