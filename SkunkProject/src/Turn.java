@@ -26,12 +26,13 @@ public class Turn {
 			
 			boolean skunkRolled = handleShake(mRoll);
 			
-			int playerTurnScore = startingScore + turnScore;
-			Ui.displayRollInfo(mRoll.getRoll(), playerTurnScore);
-			
 			if(skunkRolled) {
 				rollAgain = false;
+				Ui.displayRollInfo(mRoll.getRoll(), 0);
 			} else {
+				int playerTurnScore = startingScore + turnScore;
+				Ui.displayRollInfo(mRoll.getRoll(), playerTurnScore);
+				
 				rollAgain = Ui.rollPrompt();
 			}
 		}
