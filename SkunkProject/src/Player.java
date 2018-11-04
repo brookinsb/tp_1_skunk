@@ -3,9 +3,11 @@ public class Player {
 
 	private ISkunkUi ui;
 	private String name;
+	private final int MIN_DECLARE_SCORE = 100;
 	private int chips = 50;
 	private int score = 0;
 	private int chipsToKitty = 0;
+	private boolean mDeclared = false;
 	
 	public Player(ISkunkUi ui, String name) {
 		this.ui = ui;
@@ -13,6 +15,8 @@ public class Player {
 	}
 
 	public void takeTurn() {
+		mDeclared = false;
+		
 		Turn turn = new Turn(ui, score);
 		
 		ui.displayStartTurnInfo(name, chips, score);
@@ -20,6 +24,8 @@ public class Player {
 		turn.go();
 
 		handleTurnScore(turn);
+		
+		checkDeclaration();
 		
 		ui.displayEndTurnInfo(name, chips, score);
 		
@@ -38,6 +44,27 @@ public class Player {
 		} else {
 			this.score = 0;
 		}
-		
 	}
+
+	private void checkDeclaration() {
+		if(this.score >= MIN_DECLARE_SCORE) {
+			boolean declared = ui.displayDeclarePrompt(name, score);
+			if(declared) {
+				mDeclared = true;
+			}
+		}
+	}
+
+	public boolean isDeclared() {
+		return mDeclared;
+	}
+
+	public String getName() {
+		return name;
+	}
+	
+	public int getScore() {
+		return score;
+	}
+
 }

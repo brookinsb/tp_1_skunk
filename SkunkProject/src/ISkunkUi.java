@@ -15,5 +15,9 @@ public interface ISkunkUi
 	int numberOfPlayersPrompt();
 
 	void displayStartTurnInfo(String name, int chips, int score);
+
+	boolean displayDeclarePrompt(String name, int score);
+
+	void displayPlayerDeclared(String name, int score);
 	
 }

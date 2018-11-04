@@ -63,6 +63,18 @@ public class TurnTest {
 			// TODO Auto-generated method stub
 			
 		}
+
+		@Override
+		public boolean displayDeclarePrompt(String name, int score) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		@Override
+		public void displayPlayerDeclared(String name, int score) {
+			// TODO Auto-generated method stub
+			
+		}
 		
 	}
 	

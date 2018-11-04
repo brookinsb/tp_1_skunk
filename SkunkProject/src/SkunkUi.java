@@ -63,4 +63,20 @@ public class SkunkUi implements ISkunkUi {
 		
 	}
 
+	@Override
+	public boolean displayDeclarePrompt(String name, int score) {
+		StdOut.println("You have more than 100.");
+		StdOut.print("Do you wnat to declare? (n or y): ");
+		
+		String response = StdIn.readLine();
+		
+		return response.toLowerCase().equals("y");
+	}
+
+	@Override
+	public void displayPlayerDeclared(String name, int score) {
+		StdOut.println(name + " declared with " + score + "points");
+		StdOut.println();
+	}
+
 }
