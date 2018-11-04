@@ -51,6 +51,12 @@ public class TurnTest {
 			
 			return response;
 		}
+
+		@Override
+		public int numberOfPlayersPrompt() {
+			// TODO Auto-generated method stub
+			return 0;
+		}
 		
 	}
 	

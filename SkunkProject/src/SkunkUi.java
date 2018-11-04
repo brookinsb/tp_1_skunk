@@ -42,4 +42,13 @@ public class SkunkUi implements ISkunkUi {
 		return response.toLowerCase().equals("y");
 	}
 
+	@Override
+	public int numberOfPlayersPrompt() {
+		StdOut.print("Enter the number of players (2 to 8): ");
+		
+		int response = Integer.parseInt(StdIn.readLine());
+		
+		return response;
+	}
+
 }

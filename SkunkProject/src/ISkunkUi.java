@@ -11,5 +11,7 @@ public interface ISkunkUi
 	String getPlayerName();
 
 	boolean rollPrompt();
+
+	int numberOfPlayersPrompt();
 	
 }
