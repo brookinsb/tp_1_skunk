@@ -19,13 +19,14 @@ public class Round {
 	private void addPlayers() {
 		mNumberOfPlayers = skunkUi.numberOfPlayersPrompt();
 		
-		if(mNumberOfPlayers >=2 && mNumberOfPlayers <= 8 ) {
+		while(mNumberOfPlayers < 2 || mNumberOfPlayers > 8) {
+			mNumberOfPlayers = skunkUi.numberOfPlayersPrompt();
+		}
+		
+		for(int i = 0; i < mNumberOfPlayers; i++) {
+			String name = skunkUi.getPlayerName();
+			players.add(new Player(skunkUi, name));
 
-			for(int i = 0; i < mNumberOfPlayers; i++) {
-				String name = skunkUi.getPlayerName();
-				players.add(new Player(skunkUi, name));
-
-			}
 		}
 		
 	}

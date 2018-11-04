@@ -17,7 +17,7 @@ public enum SkunkRoll {
 	private int value;
 	
 	private SkunkRoll(int value) {
-		this.value = value;
+		setValue(value);
 	}
 
 	public int getValue() {
