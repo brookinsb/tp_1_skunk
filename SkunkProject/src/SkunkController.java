@@ -18,15 +18,5 @@ public class SkunkController {
 		
 		Round skunkRound = new Round(skunkUi);
 		skunkRound.start();
-		
-		while(keepLooping) {
-			String response;
-			
-//			response = skunkUi.displayPrompt("");
-//			
-//			if(response.equals("n")) {
-//				keepLooping = false;
-//			}
-		}
-	}
+	}	
 }
