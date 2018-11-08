@@ -19,5 +19,6 @@ public interface ISkunkUi
 	boolean displayDeclarePrompt(String name, int score);
 
 	void displayPlayerDeclared(String name, int score);
-	
+
+	void displayEndOfRoundMessage();
 }

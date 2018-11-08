@@ -70,5 +70,13 @@ public class Player {
 	public int getScore() {
 		return score;
 	}
+	
+	public void addKitty(int kittyChips) {
+		this.chips += kittyChips;
+	}
+	
+	public int getChips() {
+		return this.chips;
+	}
 
 }

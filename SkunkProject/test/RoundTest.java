@@ -10,6 +10,8 @@ public class RoundTest {
 	
 	class TestUi implements ISkunkUi {
 		public int times_numberOfPlayersPrompt_called = 0;
+		public int times_numberOfGetPlayerNamePrompt_called = 0;
+		private boolean playerDeclaredCalled = false;
 		boolean rollPromptRetValue = false;
 
 		@Override
@@ -32,7 +34,7 @@ public class RoundTest {
 
 		@Override
 		public String getPlayerName() {
-			// TODO Auto-generated method stub
+			times_numberOfGetPlayerNamePrompt_called++;
 			return null;
 		}
 
@@ -80,6 +82,12 @@ public class RoundTest {
 
 		@Override
 		public void displayPlayerDeclared(String name, int score) {
+			playerDeclaredCalled = true;
+			
+		}
+
+		@Override
+		public void displayEndOfRoundMessage() {
 			// TODO Auto-generated method stub
 			
 		}
@@ -96,10 +104,11 @@ public class RoundTest {
 	@Test
 	public void testRound() {
 		testUi = new TestUi();
-		testNumber = 1;
+		testNumber = 3;
 		Round round = new Round(testUi);
 		
-		assertEquals(3, testUi.times_numberOfPlayersPrompt_called);
+		assertEquals(1, testUi.times_numberOfPlayersPrompt_called);
+		assertEquals(2, testUi.times_numberOfGetPlayerNamePrompt_called);
 	}
 
 	@Test
@@ -107,7 +116,10 @@ public class RoundTest {
 		testUi = new TestUi();
 		testNumber = 1;
 		Round round = new Round(testUi);
-	}
+
+		assertEquals(3, testUi.times_numberOfPlayersPrompt_called);
+		assertEquals(2, testUi.times_numberOfGetPlayerNamePrompt_called);
+}
 
 	@Test
 	public void testStart() {
@@ -115,6 +127,8 @@ public class RoundTest {
 		testNumber = 3;
 		Round round = new Round(testUi);
 		round.start();
+
+		assertEquals(true, testUi.playerDeclaredCalled);
 	}
 
 }

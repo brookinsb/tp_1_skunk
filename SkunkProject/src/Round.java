@@ -62,8 +62,6 @@ public class Round {
 		}
 		
 		finishFinalRound();
-		
-		skunkUi.displayMessage("End of round");
 	}
 
 	private void finishFinalRound() {
@@ -78,7 +76,15 @@ public class Round {
 			roundDone = activePlayer.isDeclared();
 		}
 		
+		// Determine winner
+		// Player winningPlayer = determineWinningPlayer();
 		
+		// Give kitty to winner
+		// winningPlayer.addKitty(kitty);
+		
+		// Brad, update to pass winning player info
+		// skunkUi.displayEndOfRoundMessage(winningPlayer.getName, etc);
+		skunkUi.displayEndOfRoundMessage();
 	}
 
 	private int getLastPlayer() {
@@ -96,8 +102,5 @@ public class Round {
 		kitty = kitty + chips;
 	}
 	
-	public int getKitty() {
-		return kitty;
-	}
 	
 }

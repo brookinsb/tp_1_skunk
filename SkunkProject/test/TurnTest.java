@@ -75,6 +75,12 @@ public class TurnTest {
 			// TODO Auto-generated method stub
 			
 		}
+
+		@Override
+		public void displayEndOfRoundMessage() {
+			// TODO Auto-generated method stub
+			
+		}
 		
 	}
 	

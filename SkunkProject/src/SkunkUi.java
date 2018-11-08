@@ -79,4 +79,12 @@ public class SkunkUi implements ISkunkUi {
 		StdOut.println();
 	}
 
+	@Override
+	public void displayEndOfRoundMessage() {
+		StdOut.println();
+		StdOut.println("** End of Round **");
+		StdOut.println();
+		
+	}
+
 }
