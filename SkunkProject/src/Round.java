@@ -6,6 +6,7 @@ public class Round {
 	private ArrayList<Player> players;
 	private int mNumberOfPlayers = 0;
 	private int activePlayerIndex;
+	private int kitty = 0;
 	
 	public Round(ISkunkUi Ui) {
 		this.skunkUi = Ui;
@@ -48,7 +49,7 @@ public class Round {
 		Player activePlayer = players.get(activePlayerIndex);
 		
 		while(true) {
-			activePlayer.takeTurn();
+			activePlayer.takeTurn(this, false);
 			
 			if(activePlayer.isDeclared()) {
 				skunkUi.displayPlayerDeclared(activePlayer.getName(), 
@@ -70,7 +71,7 @@ public class Round {
 		Player activePlayer = nextPlayer();
 		
 		while(!roundDone) {
-			activePlayer.takeTurn();
+			activePlayer.takeTurn(this, true);
 						
 			activePlayer = nextPlayer();
 			
@@ -91,5 +92,12 @@ public class Round {
 		return previousPlayerIndex;
 	}
 
+	public void addToKitty(int chips) {
+		kitty = kitty + chips;
+	}
+	
+	public int getKitty() {
+		return kitty;
+	}
 	
 }

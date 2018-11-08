@@ -14,7 +14,7 @@ public class Player {
 		this.name = name;
 	}
 
-	public void takeTurn() {
+	public void takeTurn(Round round, boolean someoneDeclared) {
 		mDeclared = false;
 		
 		Turn turn = new Turn(ui, score);
@@ -23,17 +23,19 @@ public class Player {
 		
 		turn.go();
 
-		handleTurnScore(turn);
+		handleTurnScore(round, turn);
 		
-		checkDeclaration();
+		checkDeclaration(round, someoneDeclared);
 		
 		ui.displayEndTurnInfo(name, chips, score);
 		
 	}
 
-	private void handleTurnScore(Turn turn) {
+	private void handleTurnScore(Round round, Turn turn) {
 		chipsToKitty = turn.getTotalChips();
 		chips -= chipsToKitty;
+		round.addToKitty(chipsToKitty);
+		
 		if(chips < 0) {
 			chips = 0;
 		}
@@ -46,11 +48,13 @@ public class Player {
 		}
 	}
 
-	private void checkDeclaration() {
-		if(this.score >= MIN_DECLARE_SCORE) {
-			boolean declared = ui.displayDeclarePrompt(name, score);
-			if(declared) {
-				mDeclared = true;
+	private void checkDeclaration(Round round, boolean someoneElseDeclared) {
+		if(!someoneElseDeclared) {
+			if(this.score >= MIN_DECLARE_SCORE) {
+				boolean declared = ui.displayDeclarePrompt(name, score);
+				if(declared) {
+					mDeclared = true;
+				}
 			}
 		}
 	}
