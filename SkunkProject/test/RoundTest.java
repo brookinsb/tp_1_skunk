@@ -91,6 +91,12 @@ public class RoundTest {
 			// TODO Auto-generated method stub
 			
 		}
+
+		@Override
+		public void displayRoundWinner(String name, int score) {
+			// TODO Auto-generated method stub
+			
+		}
 		
 		
 		

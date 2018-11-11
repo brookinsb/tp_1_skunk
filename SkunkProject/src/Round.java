@@ -77,14 +77,27 @@ public class Round {
 		}
 		
 		// Determine winner
-		// Player winningPlayer = determineWinningPlayer();
+		Player winningPlayer = determineWinningPlayer();
 		
 		// Give kitty to winner
-		// winningPlayer.addKitty(kitty);
+		winningPlayer.addKitty(kitty);
 		
-		// Brad, update to pass winning player info
-		// skunkUi.displayEndOfRoundMessage(winningPlayer.getName, etc);
+		skunkUi.displayRoundWinner(winningPlayer.getName(), 
+										 winningPlayer.getScore());
 		skunkUi.displayEndOfRoundMessage();
+	}
+
+	private Player determineWinningPlayer() {
+		int highScore = 0;
+		Player highScoringPlayer = players.get(0);
+		
+		for(Player player : players ) {
+			if(player.getScore() > highScore) {
+				highScore =  player.getScore();
+				highScoringPlayer = player;
+			}
+		}
+		return highScoringPlayer;
 	}
 
 	private int getLastPlayer() {

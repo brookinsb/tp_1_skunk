@@ -75,7 +75,7 @@ public class SkunkUi implements ISkunkUi {
 
 	@Override
 	public void displayPlayerDeclared(String name, int score) {
-		StdOut.println(name + " declared with " + score + "points");
+		StdOut.println(name + " declared with " + score + " points");
 		StdOut.println();
 	}
 
@@ -85,6 +85,12 @@ public class SkunkUi implements ISkunkUi {
 		StdOut.println("** End of Round **");
 		StdOut.println();
 		
+	}
+
+	@Override
+	public void displayRoundWinner(String name, int score) {
+		StdOut.println("Round winner: " + name + " with " + score + " points");
+		StdOut.println();
 	}
 
 }

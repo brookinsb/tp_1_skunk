@@ -21,4 +21,6 @@ public interface ISkunkUi
 	void displayPlayerDeclared(String name, int score);
 
 	void displayEndOfRoundMessage();
+
+	void displayRoundWinner(String name, int score);
 }

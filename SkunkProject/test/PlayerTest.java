@@ -23,16 +23,6 @@ public class PlayerTest {
 		assertEquals(0, player.getScore());
 	}
 
-//	@Test
-//	public void testTakeTurn() {
-//		TestUi testUi = new TestUi();
-//		String playerName = "Bob";
-//		
-//		Player player = new Player(testUi, playerName);
-//
-//		player.t
-//	}
-
 	@Test
 	public void testIsDeclared() {
 		TestUi testUi = new TestUi();
@@ -122,6 +112,12 @@ public class PlayerTest {
 
 		@Override
 		public void displayEndOfRoundMessage() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void displayRoundWinner(String name, int score) {
 			// TODO Auto-generated method stub
 			
 		}
