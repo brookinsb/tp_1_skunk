@@ -31,6 +31,21 @@ public class DieTest extends TestCase {
 		}
 	}
 
+	public void test_Invalid_Die() {
+		int dieArray[] = new int[] {}; 
+		try {
+			Die die = new Die(null);
+			
+		} catch (Exception e) {
+			assertTrue(true);
+		}
+		
+//		for(int dieIndex = 0; dieIndex < dieArray.length - 1; dieIndex++ ){
+//			assertEquals("Incorrect value returned", die.getLastRoll(), dieArray[dieIndex]);
+//			die.roll();
+//		}
+	}
+
 
 //	public void testGetLastRoll() {
 //		fail("Not yet implemented");

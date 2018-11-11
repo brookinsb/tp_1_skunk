@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public interface ISkunkUi
 {
@@ -22,5 +23,5 @@ public interface ISkunkUi
 
 	void displayEndOfRoundMessage();
 
-	void displayRoundWinner(String name, int score);
+	void displayRoundWinner(String name, int score, int chips, int kitty, ArrayList<Player> players);
 }

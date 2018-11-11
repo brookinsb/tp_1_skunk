@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import edu.princeton.cs.introcs.*;
 
 public class SkunkUi implements ISkunkUi {
@@ -19,7 +21,7 @@ public class SkunkUi implements ISkunkUi {
 	public void displayEndTurnInfo(String name, int chips, int score) {
 		StdOut.println(name + "\'s turn ended");
 		StdOut.println("Score: " + score + ".  Chips: " + chips);
-		StdOut.println();
+		StdOut.println("****************************************\r\n");
 		
 	}
 
@@ -88,8 +90,20 @@ public class SkunkUi implements ISkunkUi {
 	}
 
 	@Override
-	public void displayRoundWinner(String name, int score) {
+	public void displayRoundWinner(String name, int score, int chips, int kitty, 
+									ArrayList<Player> players) {
 		StdOut.println("Round winner: " + name + " with " + score + " points");
+		StdOut.println(name + "collected the kitty of " + kitty + " chips.\r\n");
+		StdOut.println();
+	
+		StdOut.println("****** Round Results ******");
+		for(Player player : players) {
+			String pName = player.getName();
+			int pScore = player.getScore();
+			int pChips = player.getChips();
+			StdOut.println(pName + ": Score: " + pScore + ", Chips: " + pChips);
+		}
+		
 		StdOut.println();
 	}
 

@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -93,7 +95,7 @@ public class RoundTest {
 		}
 
 		@Override
-		public void displayRoundWinner(String name, int score) {
+		public void displayRoundWinner(String name, int score, int chips, int kitty, ArrayList<Player> players) {
 			// TODO Auto-generated method stub
 			
 		}

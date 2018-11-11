@@ -83,7 +83,10 @@ public class Round {
 		winningPlayer.addKitty(kitty);
 		
 		skunkUi.displayRoundWinner(winningPlayer.getName(), 
-										 winningPlayer.getScore());
+										 winningPlayer.getScore(),
+										 winningPlayer.getChips(),
+										 kitty,
+										 players);
 		skunkUi.displayEndOfRoundMessage();
 	}
 
