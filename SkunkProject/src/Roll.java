@@ -22,16 +22,16 @@ public class Roll {
 		lastDie2Value = die2.getLastRoll();
 	}
 
-	private boolean isRollASkunkRoll() {
+	public boolean isRollASkunkRoll(int die1, int die2) {
 		SkunkRoll roll = SkunkRoll.NO_SKUNK;
 		
-		if(lastDie1Value == 1 && lastDie2Value == 1) {
+		if(die1 == 1 && die2 == 1) {
 			roll = SkunkRoll.DOUBLE_SKUNK;
 		} 
-		else if(lastDie1Value + lastDie2Value == 3) {
+		else if(die1 + die2 == 3) {
 			roll = SkunkRoll.SKUNK_DEUCE;
 		}
-		else if(lastDie1Value == 1 || lastDie2Value == 1 ) {
+		else if(die1 == 1 || die2 == 1 ) {
 				roll = SkunkRoll.SKUNK;
 		}
 						
@@ -42,7 +42,7 @@ public class Roll {
 	public SkunkRoll getRoll() {
 		SkunkRoll roll = SkunkRoll.NO_SKUNK;
 		
-		if(isRollASkunkRoll() ) {
+		if(isRollASkunkRoll(lastDie1Value, lastDie2Value) ) {
 			roll = SkunkRoll.SKUNK;
 		} else {
 			
